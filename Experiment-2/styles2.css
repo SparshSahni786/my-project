@@ -1,44 +1,81 @@
+/* A gray background with semi-transparency and font styling */
 body {
     background-color: #6161615b;
-    margin-top: 30vh;
+    margin-top: 30vh; /* To center the container */
+    font-family: Arial, sans-serif; /* Example of font-family property */
 }
-
+/* The main container for the content */
 .container {
     background-color: #ffffff;
-    margin: 40px auto;
-    padding: 20px 30px;
-    border-radius: 8px;
+    /* Horizontally centers the div */
+    margin: 40px auto; 
+    padding: 40px 40px;
+    border-radius: 50px; /* For rounded corners */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    max-width: 480px;
+    max-width: 480px;  /* The element will not exceed a width of 480 pixels, but it can shrink to fit smaller screens. */
+    /* Using Flexbox to arrange child elements vertically */
+    display: flex;
+    flex-direction: column;
 }
-
+/* Styles for the balance display */
 .balance {
     text-align: center;
-    font-size: 25px;
+    font-size: 2.5rem; /* Using rem for better scaling */
+    color: #35a716;
+    text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.157);
 }
-
+/* Flexbox container for the buttons, aligning them side-by-side */
+.button-group {
+    display: flex;
+    justify-content: space-between; /* Creates space between buttons */
+    gap: 15px; /* Provides space between the buttons themselves */
+    padding: 5px 5px;
+}
+/* Base styles for all buttons */
 .btn-submit {
-    width: 100%;
+    flex-grow: 1; /* Allows buttons to grow and fill the available space */
     padding: 12px;
-    color: rgb(255, 255, 255);
+    color: white; /* Using a color name */
     border: none;
-    border-radius: 5px;
-    font-size: 25px;
-    margin-top: 10px;
-    text-shadow: 0px 0px 12px rgba(0, 0, 0, 0.592);
-    
+    border-radius: 20px;
+    font-size: 20px;
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
 }
-#red{
+/* Specific button colors and hover effects */
+#red {
     background-color: hsla(0, 100%, 50%, 0.735);
 }
-#red:hover{
+#red:hover {
     background-color: hsla(0, 68%, 55%, 0.735);
-    cursor: pointer;
 }
-#green:hover{
-    background-color: hsla(113, 55%, 62%, 0.735);
-    cursor: pointer;
-}
-#green{
+#green {
     background-color: hsla(120, 100%, 50%, 0.729);
+}
+#green:hover {
+    background-color: hsla(113, 55%, 62%, 0.735);
+}
+
+/* Media Query for Responsiveness */
+@media (max-width: 600px) {
+    /* On smaller screens, the buttons will stack vertically */
+    .button-group {
+        flex-direction: column;
+    }
+    /* Adjust font size and padding for a better mobile experience */
+    .balance h1 {
+        font-size: 2rem;
+    }
+    .btn-submit {
+        font-size: 18px;
+    }
+    /* Adjust the container's top margin for better centering on smaller screens */
+    body {
+        margin-top: 15vh;
+    }
+    /* Adjust container padding to prevent content from touching the screen edges */
+    .container {
+        padding: 15px;
+        margin: 20px;
+    }
 }
