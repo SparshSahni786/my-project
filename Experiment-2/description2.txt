@@ -1,0 +1,25 @@
+HTML STRUCTURE:
+The HTML code sets up the basic structure of a simple bank account interface.
+
+    <body>: Contains the visible page content.
+
+        <div class="container">: A main container div that holds all the interactive elements. The class container is used for styling.
+
+            <div class="balance">: A div to display the current bank balance.
+
+                <h1>$0</h1>: An h1 heading displaying the initial balance as "$0".
+
+            <div class="button-group">: A div that acts as a container for the action buttons, 
+                using the class button-group for styling and layout in css.
+
+            <button class="btn-submit" id="green">Deposit</button>: A button with the text "Deposit", 
+                the class btn-submit for general button styling, and the ID green for specific green button styling in css.
+
+            <button class="btn-submit" id="red">Withdraw</button>: A button with the text "Withdraw", 
+                the class btn-submit for general button styling, and the ID red for specific red button styling in css.
+
+
+CSS STYLING (STYLES2.CSS):
+The CSS code defines the visual presentation of the HTML elements.
+
+(for detailed description refer to styles2.css)
