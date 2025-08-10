@@ -1,0 +1,50 @@
+DETAILED CODE DESCRIPTION
+This document provides a comprehensive overview of the HTML and CSS structure for an "Admin Dashboard." 
+The setup includes a core HTML file (AdminDashboard.html) for content and layout, and a CSS file (styles3.css) for all styling and interactive features, including a dark theme toggle.
+
+I. HTML STRUCTURE (AdminDashboard.html)
+The HTML file lays the foundation for the dashboard using a semantic and logical structure.
+
+BODY SECTION
+This section contains all the visible content of the dashboard.
+
+Hidden Checkbox (#themeCheckbox): A fundamental element for the theme toggle. This checkbox is invisible to the user (display: none;) 
+but its state (checked/unchecked) is what the CSS uses to switch between light and dark themes.
+
+Grid Container (<div>): The main wrapper for the entire dashboard. This div uses CSS Grid to create a structured layout with a fixed-width sidebar (160px), 
+a flexible main content area, and defined row heights for the header, main content, and footer. The height is set to 100vh to ensure it fills the entire viewport.
+
+Header (<header>): Occupies the top row of the grid. It uses Flexbox (display: flex) to align the main title (<h1>ADMIN DASHBOARD</h1>) 
+and the theme toggle button on opposite sides.
+
+Navigation (<nav class="sidebar">): Located in the left column. This section contains an unordered list (<ul>) of navigation links for HOME, USERS, and SETTINGS, 
+providing an easy way for users to navigate the dashboard.
+
+Main Content (<main>): Occupies the central, right-hand side of the grid. It's a versatile area intended for charts, tables, and reports. 
+It includes a welcome message and placeholder text.
+
+Footer (<footer>): Sits at the bottom of the grid, spanning both columns. It contains a copyright notice, and uses Flexbox to center its content.
+
+
+II. CSS STYLING (styles3.css)
+The CSS file controls the appearance and interactive theme-switching functionality of the dashboard.
+
+CSS VARIABLES (:root)
+Custom properties (e.g., --bg-header, --bg-nav) are defined in the :root pseudo-class. These variables store color values for different parts of the dashboard. 
+This approach makes it incredibly easy to switch themes by simply changing the values of these variables.
+
+CORE STYLING
+General Reset (*): margin: 0px; is used to remove the default browser margins, ensuring a consistent starting point across different browsers.
+
+Grid Container (div): Styles the main div to function as a grid with grid-template-columns and grid-template-rows and sets the height to 100vh.
+
+Element Styling: Specific styles are applied to the header, nav, main, and footer to define their borders, padding, font sizes, and initial background colors using the CSS variables.
+
+Button & Label: The theme button and its label are styled for appearance and interactivity. A cursor: pointer on hover tells the user it's a clickable element.
+
+THEME TOGGLE LOGIC
+input[type="checkbox"]: The display: none; rule ensures the checkbox is not visible to the user.
+
+:checked Pseudo-class: This is the heart of the theme switching. The CSS rule input:checked ~ div targets the main grid div when the hidden checkbox is checked. 
+It then reassigns the CSS variables to dark colors (e.g., --bg-header becomes a dark gray, --bg-main becomes black) and changes the text color to white (color: white;). 
+This instantly transforms the entire dashboard into its dark theme.
