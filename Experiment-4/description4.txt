@@ -1,0 +1,38 @@
+HTML AND CSS STRUCTURE
+The HTML sets up the page's basic structure, while the CSS (via Bootstrap) handles its styling and layout.
+
+  * <link href="..." rel="stylesheet">: This links the page to the Bootstrap CSS file. It's a key part of implementing 
+    Bootstrap, providing all the pre-built styles for a clean, modern look. The href attribute points to the file hosted 
+    on a Content Delivery Network (CDN), which means the browser downloads it from a server close to the user for faster loading.
+
+  * <script src="...">: This links the Bootstrap JavaScript file, which enables interactive components. It's placed just before the
+    closing </body> tag as a best practice to ensure the page's content loads before the script runs.
+
+  * <div> with class="offset-lg-3 col-lg-6 container": This div acts as the main container for the content. It uses Bootstrap's 
+    grid system to center the content and limit its width, creating a well-structured and appealing layout on large screens.
+
+  * <textarea id="txtData" ...>: This is the primary input area.
+
+  * id="txtData": Provides a unique identifier that the JavaScript can reference.
+
+  * oninput="showCount()": This is a JavaScript event handler. It triggers the showCount() function every time the user types 
+    or deletes a character.
+
+  * <span id="counter">0</span>: This is where the character count is displayed. The id="counter" allows the JavaScript to 
+    easily find and update its content.
+
+
+JAVASCRIPT FUNCTIONALITY
+The JavaScript code is simple but powerful, giving the page its core functionality.
+
+  * <script>...</script>: This tag encloses the JavaScript code.
+
+  * function showCount(): This is a user-defined function. It's the engine behind the counter.
+
+  * var count = document.getElementById("txtData").value.length;: This line gets the value from the <textarea> (using its ID txtData),
+    then uses the .length property to get the number of characters in that value. The result is stored in the count variable.
+
+  * document.getElementById("counter").innerText = count;: This line finds the <span> element with the ID counter and updates its text 
+    content (innerText) with the current value of the count variable.
+
+This entire process happens instantly as you type, providing real-time feedback to the user without needing to refresh the page.
