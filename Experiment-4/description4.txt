@@ -8,8 +8,12 @@ The HTML sets up the page's basic structure, while the CSS (via Bootstrap) handl
   * <script src="...">: This links the Bootstrap JavaScript file, which enables interactive components. It's placed just before the
     closing </body> tag as a best practice to ensure the page's content loads before the script runs.
 
-  * <div> with class="offset-lg-3 col-lg-6 container": This div acts as the main container for the content. It uses Bootstrap's 
-    grid system to center the content and limit its width, creating a well-structured and appealing layout on large screens.
+  * <div> with class="offset-lg-3 col-lg-6 mt-5 container border border-5": This div acts as the main container for the content. It uses Bootstrap's 
+    grid system to center the content and limit its width, giving margin on top(mt-5) and border with thickening the border using border-5, creating 
+    a well-structured and appealing layout on large screens.
+
+  * <h1 class="pt-3">Live Character Counter</h1>: This tag shows the heading that what the javascript function does with padding on top using pt-5 
+    through bootstrap
 
   * <textarea id="txtData" ...>: This is the primary input area.
 
