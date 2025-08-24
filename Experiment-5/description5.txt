@@ -1,0 +1,49 @@
+HTML AND CSS STRUCTURE
+The HTML sets up the page's basic structure, while the CSS handles its styling and layout.
+
+  * Custom CSS in <style> tag: This block contains all the styling for the page, defining colors, fonts, and layout.
+    Unlike using a framework like Bootstrap, all styles are custom-written to control the appearance of elements like
+    the body, headings, and product cards.
+
+  * <div class="border">: This div acts as the main container for the product list. Its CSS defines a blue background
+    (#6497b1), a solid border, and rounded corners, creating a distinct visual section on the page.
+
+  * <h1 id="heading">Product List</h1>: This tag displays the main heading for the page. The id="heading" allows for 
+    specific CSS rules to style its font size, color (#011f4b), and text shadow, making it stand out.
+
+  * <div id="cat"> and <select id="filter">: This is the control for filtering. The div contains the text label, 
+    while the select element provides the dropdown menu with different product categories.
+
+  * <div class="product-list"> and <div class="product">: The product-list div is the container for all the individual 
+    product cards. Each div with the class product represents a single product item. The data-category attribute on each product 
+    div stores the category information that the JavaScript uses for filtering.
+
+
+JAVASCRIPT FUNCTIONALITY
+The JavaScript code is simple but powerful, giving the page its core functionality by filtering the displayed products.
+
+  * <script>...</script>: This tag encloses the JavaScript code that handles the interactive filtering.
+
+  * const filter = document.getElementById("filter");: This line attempts to get a reference to the select element.
+
+  * const products = document.querySelectorAll(".product");: This line selects all HTML elements on the page with the class product.
+    It returns a list of all product cards.
+
+  * filter.addEventListener("change", () => { ... });: This is a JavaScript event listener. It triggers the enclosed function every 
+    time the user selects a different option in the filter dropdown.
+
+  * Filtering Logic:
+
+    -> const selected = filter.value;: This line gets the value of the currently selected option from the dropdown 
+       (e.g., "shoes", "clothing", or "all").
+
+    -> products.forEach(product => { ... });: This loop iterates through every product on the page.
+
+    -> if (selected === "all" || category === selected) { ... }: This conditional statement checks if the product's data-category
+       attribute matches the selected value.
+
+    -> product.classList.remove("hidden"); or product.classList.add("hidden");: Based on the condition, the code either removes the
+       hidden class (making the product visible) or adds the hidden class (hiding the product).
+
+This entire process happens instantly when a new category is selected, dynamically hiding or showing products without the need to 
+reload the page.

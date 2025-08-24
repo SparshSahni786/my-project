@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Filter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #b3cde0;
+        }
+
+        #heading {
+            text-align: center;
+            margin: 25px 0px;
+            font-size: 38px;
+            color: #011f4b;
+            text-shadow: 2px 2px 0px #b3cde0;
+        }
+
+        #filter {
+            color: #011f4b;
+            font-size: large;
+        }
+
+        select {
+            display: block;
+            padding: 10px;
+            background-color: #b3cde0
+        }
+
+        .product-list {
+            display: grid;
+            justify-content: center;
+        }
+
+        .product {
+            background: #b3cde0;
+            color: #005b96;
+            padding: 15px;
+            margin: 5px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 5px 5px 10px #011f4bbc;
+        }
+
+        .product h3 {
+            margin: 0px 0px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .border {
+            border: 2px solid #011f4b;
+            width: 250px;
+            margin: auto;
+            padding: 20px;
+            background: #6497b1;
+            border-radius: 40px;
+        }
+
+        .center {
+            color: #011f4b;
+            text-align: center;
+            margin: 25px 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="center">
+        <h2>Made by: </h2>
+        <h1>Sparsh Sahni<br>
+            23BAI71441
+        </h1>
+    </div>
+    <div class="border">
+        <h1 id="heading">Product List</h1>
+        <div style="display: flex; justify-content: center; align-items: center;">
+            <div id="cat">Filter by category:</div>
+            <select id="filter" style="margin-left: 5px;">
+                <option value="all">All</option>
+                <option value="shoes">Shoes</option>
+                <option value="clothing">Clothing</option>
+                <option value="gadgets">Gadgets</option>
+            </select>
+        </div>
+        <br>
+        <br>
+        <div class="product-list">
+            <div class="product" data-category="shoes">
+                <h3>Running Shoes</h3>
+            </div>
+            <div class="product" data-category="gadgets">
+                <h3>Soundbar</h3>
+            </div>
+            <div class="product" data-category="shoes">
+                <h3>Casual Sneakers</h3>
+            </div>
+            <div class="product" data-category="clothing">
+                <h3>Formal Shirt</h3>
+            </div>
+            <div class="product" data-category="gadgets">
+                <h3>Smartwatch</h3>
+            </div>
+            <div class="product" data-category="clothing">
+                <h3>T-Shirt</h3>
+            </div>
+            <div class="product" data-category="gadgets">
+                <h3>Smartphone</h3>
+            </div>
+            <div class="product" data-category="gadgets">
+                <h3>Wireless Earbuds</h3>
+            </div>
+            <div class="product" data-category="clothing">
+                <h3>Jeans</h3>
+            </div>
+            <div class="product" data-category="shoes">
+                <h3>Loafers</h3>
+            </div>
+        </div>
+
+        <script>
+            const filter = document.getElementById("filter");
+            const products = document.querySelectorAll(".product");
+
+            filter.addEventListener("change", () => {
+                const selected = filter.value;
+
+                products.forEach(product => {
+                    const category = product.getAttribute("data-category");
+
+                    if (selected === "all" || category === selected) {
+                        product.classList.remove("hidden");
+                    } else {
+                        product.classList.add("hidden");
+                    }
+                });
+            });
+        </script>
+    </div>
+</body>
+
+</html>
