@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Person Class Hierarchy</title>
+
+  <style>
+    /* Apply a clean font and background */
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f7fa;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 80vh;
+    }
+
+    h2 {
+      color: #333;
+      margin-top: 1rem;
+      font-size: 2.9rem;
+      text-align: center;
+    }
+
+    .container {
+      display: flex;
+      gap: 2rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    /* Card styling */
+    .card {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      min-width: 400px;
+      max-width: 500px;
+      text-align: center;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .title {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 0.8rem;
+      color: #0077b6;
+    }
+
+    .details {
+      font-size: 1.4rem;
+      color: #444;
+      line-height: 1.6;
+    }
+
+    /* Different background color for student and teacher */
+    .student-card {
+      border-top: 5px solid #ff6b6b;
+    }
+
+    .teacher-card {
+      border-top: 5px solid #4dabf7;
+    }
+  </style>
+</head>
+
+<body>
+  <h2> Person Class Hierarchy Demo</h2>
+
+  <div class="container">
+    <div id="student-card" class="card student-card">
+      <div class="title">Student</div>
+      <div class="details" id="student-output"></div>
+    </div>
+
+    <div id="teacher-card" class="card teacher-card">
+      <div class="title">Teacher</div>
+      <div class="details" id="teacher-output"></div>
+    </div>
+  </div>
+
+  <script>
+    // Base Class
+    class Person {
+      constructor(name, age) {
+        this.name = name;
+        this.age = age;
+      }
+
+      displayInfo() {
+        return `Name: ${this.name}<br>Age: ${this.age}`;
+      }
+    }
+
+    // Student subclass
+    class Student extends Person {
+      constructor(name, age, course) {
+        super(name, age);
+        this.course = course;
+      }
+
+      displayInfo() {
+        return `${super.displayInfo()}<br>Course: ${this.course}`;
+      }
+    }
+
+    // Teacher subclass
+    class Teacher extends Person {
+      constructor(name, age, department) {
+        super(name, age);
+        this.department = department;
+      }
+
+      displayInfo() {
+        return `${super.displayInfo()}<br>Department: ${this.department}`;
+      }
+    }
+
+    // Creating objects
+    const student1 = new Student("Sparsh", 19, "Computer Science AIML");
+    const teacher1 = new Teacher("Ms Vasudha", 24, "Computer Science AIML");
+
+    // Output results
+    document.getElementById("student-output").innerHTML = student1.displayInfo();
+    document.getElementById("teacher-output").innerHTML = teacher1.displayInfo();
+  </script>
+</body>
+
+</html>

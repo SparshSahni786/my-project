@@ -1,0 +1,64 @@
+PERSON CLASS HIERARCHY – PROJECT DOCUMENTATION
+
+TECHNOLOGIES USED
+  * HTML5 – For structuring the content (heading, container, cards).
+  * CSS3 – For styling, layout design, and hover animations.
+  * JAVASCRIPT (ES6 CLASSES) – For implementing the Person, Student, and Teacher classes with inheritance.
+
+
+PROJECT OVERVIEW
+This project is a PERSON CLASS HIERARCHY DEMO that visually represents Object-Oriented Programming (OOP) principles.
+
+    It demonstrates:
+    * CLASS CREATION – Using a base Person class.
+    * INHERITANCE – Student and Teacher classes extend Person.
+    * METHOD OVERRIDING – displayInfo() is overridden to include extra properties for each subclass.
+    * DOM MANIPULATION – Dynamically updates the HTML to display details inside styled cards.
+
+    The UI is CLEAN AND MODERN with:
+    * Two visually distinct cards – one for Student and one for Teacher.
+    * Hover animations to make it interactive.
+    * Color-coded borders for better visual distinction.
+
+
+PROJECT STRUCTURE
+
+1. HTML (STRUCTURE)
+Defines the layout of the page with:
+  * <h2> for the heading title.
+  * A .container that holds two .card elements.
+  * Separate <div> sections for student and teacher outputs.
+
+2. CSS (STYLING & DESIGN)
+Provides a modern and responsive look:
+  * Body Styling – Centered layout, light background, clean font.
+  * Cards – White background, rounded corners, soft shadows, hover lift effect.
+  * Color Coding – Student card has a red border, Teacher card has a blue border.
+  * Typography – Large headings (2.9rem), well-spaced details for easy readability.
+
+3. JAVASCRIPT (FUNCTIONALITY)
+The JavaScript code handles the logic of the project using classes and inheritance.
+  * Person Class – A base class with name and age properties and a displayInfo() method that returns formatted details.
+  * Student Class – Extends Person, adds a course property, and overrides displayInfo() to also show the course.
+  * Teacher Class – Extends Person, adds a department property, and overrides displayInfo() to also show the department.
+  * Object Creation – Creates one Student and one Teacher object with sample data.
+  * DOM Manipulation – Inserts the returned details into the respective <div> elements (student-output and teacher-output) 
+    so they appear on the webpage dynamically.
+
+This keeps the code clean, reusable, and easy to expand if you want to add more people or roles in the future.
+
+
+LEARNING OUTCOMES
+By building this project, I learned:
+  * How to create classes and use constructors.
+  * How to use inheritance to share common properties.
+  * How to override methods using super().
+  * How to manipulate the DOM to dynamically insert class data.
+  * How to design responsive and interactive UI using CSS.
+
+
+KEY OOP CONCEPTS USED
+  * CLASS CREATION – Defining Person, Student, and Teacher.
+  * INHERITANCE – Student and Teacher extend Person.
+  * METHOD OVERRIDING – Custom displayInfo() in subclasses.
+  * OBJECT INSTANTIATION – Creating real objects from classes.
