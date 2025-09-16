@@ -1,0 +1,89 @@
+LIBRARY MANAGEMENT UI – PROJECT DOCUMENTATION
+
+TECHNOLOGIES USED
+  * REACT – For building a fast, interactive single-page application.
+  * JAVASCRIPT (ES6+) – For handling logic (search, add, remove).
+  * CSS3 – For styling the UI with a clean, minimal look.
+  * VITE – For fast development and optimized builds.
+
+PROJECT OVERVIEW
+This project is a LIBRARY MANAGEMENT APPLICATION where users can:
+  * SEARCH BOOKS – Filter by title or author (case-insensitive).
+  * ADD BOOKS – Add new books with title and author.
+  * REMOVE BOOKS – Delete any book with a single click.
+
+The app updates instantly using REACT STATE – no page reload needed.
+The UI is SIMPLE, MINIMAL, AND USER-FRIENDLY, with:
+  * A centered library box
+  * Big, clear input fields
+  * Clean buttons and borders
+
+PROJECT STRUCTURE
+  1. APP.JSX
+
+     ROLE: Entry point of the application.
+     TASK: Renders the <Library /> component.
+
+     function App() {
+     return (
+         <div>
+         <Library />
+         </div>
+     );
+     }
+
+  2. LIBRARY.JSX (MAIN COMPONENT)
+     The HEART OF THE APPLICATION – manages all state and logic.
+
+     STATE VARIABLES:
+      books – Stores all books in the library.
+      search – Stores the search text.
+      newTitle, newAuthor – Controlled input values for adding a new book.
+     
+     FUNCTIONS:
+      FILTER BOOKS → Filters books based on search text.
+      ADD BOOK → Adds a book if both fields are filled.
+      REMOVE BOOK → Deletes a book using its index.
+      
+     UI RENDERING:
+      Displays a search bar, input fields, and add button.
+      Shows a dynamic book list using .map().
+      Displays "NO BOOKS FOUND" when there are no matches.
+
+  3. STYLING (APP.CSS)
+   * .LIBRARY-MANAGEMENT → Centers the box, adds border and padding.
+   * .SEARCH-INPUT → Wide search bar for easy typing.
+   * .ADD-BOOK-FORM → Aligns inputs and button in a single row.
+   * .BOOK-ITEM → Displays book title, author, and a remove button.
+   * .REMOVE-BTN → Styled button for removing books.
+   * .NO-BOOKS → Message shown when no results match.
+
+LEARNING OUTCOMES
+By building this project, I learned:
+  * How to manage data using REACT USESTATE.
+  * How to create CONTROLLED INPUTS that sync with state.
+  * How to display data dynamically using .MAP().
+  * How to filter data using .FILTER().
+  * How to handle events (onChange, onClick).
+  * How to style React components with CSS for a clean UI.
+
+KEY REACT CONCEPTS USED
+  * STATE MANAGEMENT with useState
+  * CONTROLLED COMPONENTS for inputs
+  * DYNAMIC RENDERING using .map()
+  * CONDITIONAL RENDERING for empty states
+  * EVENT HANDLING for real-time user interaction
+
+USER FLOW (STEP BY STEP)
+
+  1️ SEARCH BOOKS
+    User types in the search bar → The list updates instantly to show matches.
+  
+  2️ ADD BOOK
+    User enters a new title & author → Clicks ADD BOOK → Book appears immediately.
+  
+  3️ REMOVE BOOK
+    User clicks REMOVE → Book disappears from the list.
+  
+  4️ EMPTY STATE
+    If no books match the search → "NO BOOKS FOUND" is displayed.

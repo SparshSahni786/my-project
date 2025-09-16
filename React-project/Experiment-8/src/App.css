@@ -1,42 +1,90 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+.library-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  border: 1px solid #999;
+  border-radius: 6px;
+  padding: 1.5rem;
+  background: #fafafa;
+  box-shadow: 0 0 8px rgba(100, 100, 100, 0.1);
+}
+
+.library-management{
+  width: 50%;
+  margin: 25vh auto;
+  border: 2px solid black;
+  padding: 20px 50px;
+}
+
+.library-management h1 {
+  justify-content: center;
+  font-size: 43px;
+  display: flex;
+  font-weight: 700;
+}
+
+.search-input {
+  width: 98.7%;
+  padding: 10px 0px 10px 10px;
+  margin-bottom: 1rem;
+  font-size: large;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+}
+
+.add-book-form {
+  display: flex;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.add-book-form input {
+  flex: 1;
+  font-size: large;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+}
+
+.add-book-form button {
+  padding: 0.4rem 0.9rem;
+  border: 1px solid #777;
+  border-radius: 4px;
+  font-size: large;
+  background: #ddd;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.book-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ccc;
+  font-size: large;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 4px;
+  background: #fff;
+}
+
+.book-item span strong {
+  font-weight: 700;
+}
+
+.remove-btn {
+  padding: 0.3rem 0.7rem;
+  background: #eee;
+  font-size: large;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.no-books {
+  margin-top: 1rem;
+  color: #888;
+  font-style: italic;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
