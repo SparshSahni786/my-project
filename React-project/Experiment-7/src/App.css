@@ -5,7 +5,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem; /* base padding */
+  padding: 1.2rem; /* base padding */
 }
 
 @media (min-width: 640px) {
