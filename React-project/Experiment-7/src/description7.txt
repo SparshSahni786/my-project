@@ -1,0 +1,75 @@
+PRODUCT LIST UI – PROJECT DOCUMENTATION
+
+TECHNOLOGIES USED
+  * REACT – For building a fast, component-based, interactive single-page application.
+  * JAVASCRIPT (ES6+) – For mapping product data and handling conditional rendering.
+  * CSS3 – For styling with a clean, card-based design and hover effects.
+  * VITE / REACT-SCRIPTS – For fast development and optimized production builds.
+
+
+PROJECT OVERVIEW
+This project is a PRODUCT LISTING APPLICATION where users can:
+  * VIEW PRODUCTS – Displayed in a responsive grid layout.
+     -> CHECK PRICE – Each product shows its formatted price.
+     -> CHECK AVAILABILITY – Products clearly indicate "In Stock" or "Out of Stock" with colored badges.
+  * The UI is CLEAN, MODERN, AND RESPONSIVE, with:
+     -> A centered main card containing the product list.
+     -> Beautiful, shadowed product cards with hover animations.
+     -> Color-coded stock status badges for quick identification.
+
+
+PROJECT STRUCTURE
+
+1. APP.JSX
+
+  * ROLE: Entry point of the application.
+  * TASK: Renders the main container with the product list.
+  
+  * const products = [
+      { name: 'Wireless Mouse', price: 25.99, inStock: true },
+      { name: 'Keyboard', price: 45.5, inStock: false },
+      { name: 'Monitor', price: 199.99, inStock: true },
+    ];
+  
+  * DATA: Defines a static array of products with name, price, and stock status.
+  * UI RENDERING: Uses .map() to pass product data as props to the <ProductCard /> component.
+
+2. PRODUCTCARD.JSX (CHILD COMPONENT)
+
+  * ROLE: Displays individual product details inside a styled card.
+  * PROPS:
+     -> name – Product name
+     -> price – Product price (formatted with .toFixed(2))
+     -> inStock – Boolean to decide badge color and text
+  * UI RENDERING:
+     -> Displays product title and price.
+     -> Conditionally applies a CSS class (in-stock or out-of-stock) for the status badge.
+     -> Provides a clean, minimal look with shadows and rounded corners.
+  
+3. STYLING (APP.CSS)
+
+  * .APP-MAIN → Centers the layout vertically & horizontally, with responsive padding.
+  * .APP-CONTAINER & .APP-CARD → Provides a max-width, rounded borders, and card shadow effect.
+  * .PRODUCT-LIST → Flex layout with wrapping, spacing, and responsiveness.
+  * .PRODUCT-CARD → Rounded, shadowed product box with hover animation (lift effect).
+  * .PRODUCT-TITLE & .PRODUCT-PRICE → Clear typography with bold serif font and subtle color.
+  * .STATUS-BADGE → Fully rounded pill badge with conditional colors:
+     -> Green for In Stock
+     -> Red for Out of Stock
+
+
+LEARNING OUTCOMES
+By building this project, I learned:
+  * How to pass props between parent and child components in React.
+  * How to use .map() for dynamically rendering lists.
+  * How to conditionally render styles based on props.
+  * How to build a responsive, card-based layout with flexbox.
+  * How to use hover effects and transitions to improve UX.
+
+
+KEY REACT CONCEPTS USED
+
+  * COMPONENT-BASED ARCHITECTURE – Parent <App /> manages data, <ProductCard /> renders UI.
+  * PROPS DRILLING – Passing data from parent to child for reusability.
+  * DYNAMIC RENDERING – Using .map() for listing multiple products.
+  * CONDITIONAL RENDERING – Applying different CSS classes for stock status.
