@@ -1,0 +1,98 @@
+# EXPRESS.JS TICKET BOOKING SYSTEM – PROJECT DOCUMENTATION  
+
+## TECHNOLOGIES USED  
+- **Node.js** – Runtime environment to execute JavaScript on the server.  
+- **Express.js** – Web framework to create API routes for seat management.  
+- **JavaScript (ES6)** – For implementing state management, timers, and API logic.  
+
+---
+
+## PROJECT OVERVIEW  
+This project demonstrates a **REAL-TIME TICKET BOOKING SYSTEM** using Express.js with **seat locking, booking, and timed lock expiration**.  
+
+It simulates:  
+- **STATE MANAGEMENT** – Tracking seat availability and reservations in memory.  
+- **USER LOCKING** – Preventing multiple users from booking the same seat simultaneously.  
+- **AUTO-RELEASE** – Using timers to reset seats if the user does not confirm within a given time limit.  
+
+This makes it ideal for **learning and prototyping** real-time booking backends for tickets, events, or reservations.  
+
+---
+
+## PROJECT STRUCTURE  
+
+### 1. SEAT DATA MODEL  
+The core of the project is an **in-memory `seats` object**, indexed by seat number (1 to 5).  
+Each seat stores:  
+- **status** – Can be `"available"`, `"locked"`, or `"booked"`.  
+- **lockedBy** – The user who has locked the seat (or `null` if none).  
+- **lockTimer** – A reference to a timer that auto-releases the lock after 60 seconds.  
+
+This simple data model allows tracking of seat availability and ensures fair allocation.  
+
+---
+
+### 2. API ENDPOINTS  
+
+#### **1️⃣ GET `/seats` – View Seat Status**  
+- Returns the status (`available`, `locked`, `booked`) of all seats.  
+- Allows clients to display a **real-time seat map** to users.  
+
+---
+
+#### **2️⃣ POST `/lock` – Lock a Seat**  
+- **Request Body:** `{ seatId, userId }`  
+- **Validations:**  
+  - Seat must exist.  
+  - Cannot lock if seat is already booked.  
+  - Cannot lock if another user already holds the lock.  
+
+- **Behavior:**  
+  - If seat is free or already locked by the same user, it is marked `"locked"`.  
+  - Sets `lockedBy` to the current `userId`.  
+  - Starts (or resets) a **60-second timer** – if time expires, seat becomes `"available"` again automatically.  
+  - Logs expiration in the console for visibility.  
+
+This ensures **exclusive seat locking** per user and prevents conflicts.  
+
+---
+
+#### **3️⃣ POST `/confirm` – Confirm Booking**  
+- **Request Body:** `{ seatId, userId }`  
+- **Validations:**  
+  - Seat must exist.  
+  - Seat must be locked by the same user making the request.  
+
+- **Behavior:**  
+  - Marks the seat as `"booked"`.  
+  - Clears `lockedBy` and cancels the lock timer.  
+  - Responds with a success message confirming the booking.  
+
+This converts a **temporary lock** into a **permanent reservation**.  
+
+---
+
+## BOOKING LOGIC HIGHLIGHTS  
+- **Timeout-Based Locking:** Ensures seats cannot be held forever without confirmation.  
+- **Three-State Seat Model:** `"available"`, `"locked"`, `"booked"` – makes the lifecycle clear.  
+- **Console Logs:** Help debug and visualize when locks expire.  
+- **In-Memory Storage:** Keeps it lightweight and fast, but resets when server restarts (suitable for demos).  
+
+---
+
+## SCALABILITY & IMPROVEMENTS  
+- Use a **database** (MySQL, MongoDB, Redis) for persistent state.  
+- Handle **distributed locking** in case of multiple server instances.  
+- Add **unlock endpoint** for explicit user cancellation.  
+- Implement **user authentication** for secure seat reservations.  
+- Add **real-time updates** using WebSockets so all clients see live seat status changes.  
+
+---
+
+## LEARNING OUTCOMES  
+By building this project, I learned:  
+- How to design and manage **stateful APIs**.  
+- How to use **timers (`setTimeout`)** to implement auto-expiration.  
+- How to validate requests to avoid race conditions.  
+- How to simulate a real-world booking workflow using **Express.js**.  
+- The importance of **locking mechanisms** for concurrent systems.  

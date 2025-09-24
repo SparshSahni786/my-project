@@ -1,0 +1,71 @@
+# READLINE MODULE – PROJECT DOCUMENTATION  
+
+## TECHNOLOGIES USED  
+- **Node.js** – To run the JavaScript application in a server-side environment.  
+- **Readline Module** – For creating interactive command-line interfaces.  
+- **JavaScript (ES6)** – For implementing asynchronous callbacks and event handling.  
+
+---
+
+## PROJECT OVERVIEW  
+This project demonstrates the **READLINE MODULE** in Node.js, which enables interactive command-line input and output.  
+
+It covers:  
+- **INTERFACE CREATION** – Using `readline.createInterface()` with `process.stdin` (input) and `process.stdout` (output).  
+- **USER PROMPTS** – Asking users for input using `question()` and processing responses asynchronously.  
+- **EVENT HANDLING** – Listening for input events with `.on('line')` to handle multiple user entries.  
+- **RESOURCE MANAGEMENT** – Closing the interface using `.close()` to free resources and exit the Node.js process cleanly.  
+
+This approach makes it easy to build **menu-driven CLI applications** like Employee Management Systems, Setup Wizards, and Interactive Tools.  
+
+---
+
+## PROJECT STRUCTURE  
+
+### 1. READLINE INTERFACE (CREATION)  
+The `readline.createInterface()` method is used to:  
+- Bind **input** to `process.stdin` (keyboard input).  
+- Bind **output** to `process.stdout` (terminal output).  
+- Optionally set a **prompt message**, tab-completion, and history tracking.  
+
+### 2. COMMON METHODS USED  
+- **question(query, callback)** – Displays a prompt and waits for user input, then executes the callback with the result.  
+- **on('line', callback)** – Handles every line entered by the user (useful for loops or repeated input).  
+- **setPrompt() & prompt()** – Dynamically customize and re-display prompts.  
+- **close()** – Ends the interface and allows Node.js to exit.  
+
+### 3. INPUT HANDLING  
+- The program waits **asynchronously** for user input, preventing blocking of the Node.js event loop.  
+- Inputs can be chained for multi-step workflows (menus, forms, etc.).  
+- After processing, the interface either re-prompts or exits based on the logic.  
+
+---
+
+## LIMITATIONS AND STRENGTHS  
+
+### **Strengths**  
+- Ideal for **terminal-based tools** and setup scripts.  
+- Fully **non-blocking** and event-driven, fitting Node.js’s architecture.  
+- Lightweight and easy to integrate into CLI applications.  
+
+### **Limitations**  
+- Not suitable for **graphical interfaces** or complex UI.  
+- Works best for **line-oriented input** (single line per prompt).  
+
+---
+
+## EXAMPLE USAGE  
+A sample menu-driven CLI tool might:  
+- Display a **menu** of options (Add, List, Remove, Exit).  
+- Use `question()` to capture user input for each choice.  
+- Process the input and show results dynamically.  
+- Repeat until the user chooses to exit, then call `.close()`.  
+
+---
+
+## LEARNING OUTCOMES  
+By using the Readline module, I learned:  
+- How to create and configure a `readline` interface.  
+- How to handle **user input asynchronously** without blocking execution.  
+- How to design **interactive, menu-driven command-line tools**.  
+- How to **close the interface** properly to exit cleanly.  
