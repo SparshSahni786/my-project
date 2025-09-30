@@ -1,0 +1,32 @@
+==========================
+APP DESCRIPTION
+==========================
+
+THIS REACT APP MANAGES ORDERS WITH PRODUCT NAMES AND STATUS.
+
+1. STATE MANAGEMENT:
+   - orders: Array of order objects {id, products[], status}
+   - products: Controlled input for product names (comma separated)
+   - status: Controlled select for order status ("pending", "shipped", "delivered")
+
+2. ADDING ORDERS:
+   - Form allows entering products and selecting status
+   - On submit:
+       • Prevents empty input
+       • Creates a new order with unique ID
+       • Updates orders state
+       • Resets input fields
+
+3. DISPLAY:
+   - Orders are displayed as a list:
+       • Shows order ID, products, and status
+
+4. COMPONENTS:
+   - Single component App
+   - Uses React hooks (useState)
+   - Rendered to root using ReactDOM.createRoot
+
+5. STYLING:
+   - Inline styles for padding, margin, and font
+
+==========================
