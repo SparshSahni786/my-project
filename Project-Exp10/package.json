@@ -1,15 +1,28 @@
 {
-  "name": "project-exp10",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "copy-of-ai-e-commerce-chat-assistant",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start:server": "node server/ai-chat.js",
+    "start:client": "vite --host",
+    "dev": "concurrently \"npm run start:server\" \"npm run start:client\""
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "express": "^5.1.0"
+    "@google/genai": "^1.29.0",
+    "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "lucide-react": "^0.553.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "concurrently": "^9.2.1",
+    "typescript": "~5.8.2",
+    "vite": "^6.2.0"
   }
 }

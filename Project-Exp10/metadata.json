@@ -1,0 +1,5 @@
+{
+  "name": "Copy of AI E-commerce Chat Assistant",
+  "description": "An AI-powered chatbot integrated into an e-commerce website. It features a responsive UI, message history, context controls, and simulates real-time streamed responses from different AI providers.",
+  "requestFramePermissions": []
+}
